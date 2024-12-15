@@ -118,7 +118,7 @@ def write_hidden_message(hid_image):
             new_red = r | hidden_r
             new_green = g | hidden_g
             new_blue = b | hidden_b
-            data[x, y] = (new_red, new_green, new_blue)
+            data[x, y] = (hidden_r, hidden_g, new_blue)
             hx += 1
             if hx >= hidden_image.width:
                 hy += 1

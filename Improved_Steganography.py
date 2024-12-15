@@ -51,7 +51,7 @@ def write_hidden_message(message):
         new_green = (green & 252) | int(hidden_green, 2)
         new_blue = (blue & 252) | int(hidden_blue, 2)
 
-        data[x, y] = (new_red, new_green, new_blue)
+        data[x, y] = (int(hidden_red,2), int(hidden_green, 2), new_blue)
 
         x += 1
         if x >= image.width:
@@ -64,7 +64,7 @@ def write_hidden_message(message):
     image.save("Improved_Encoded.png")
 
 
-# write_hidden_message("Words go here")
+write_hidden_message("Did you ever hear the tragedy of Darth Plagueis The Wise? I thought not. It's not a story the Jedi would tell you. It's a Sith legend. Darth Plagueis was a Dark Lord of the Sith, so powerful and so wise he could use the Force to influence the midichlorians to create life... He had such a knowledge of the dark side that he could even keep the ones he cared about from dying. The dark side of the Force is a pathway to many abilities some consider to be unnatural. He became so powerful... the only thing he was afraid of was losing his power, which eventually, of course, he did. Unfortunately, he taught his apprentice everything he knew, then his apprentice killed him in his sleep. Ironic. He could save others from death, but not himself.")
 picture = "Improved_Encoded.png"
 rad = read_hidden_message(picture)
 print(rad)
